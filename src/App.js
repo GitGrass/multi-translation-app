@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import { Route, HashRouter, Navigate, Routes } from "react-router-dom";
 import "./App.css";
 import Result from "./components/Result";
+import Header from "./components/Header";
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
       // 一旦テキストベタ打ちで表示できるようにした
       <>
         <div className="App-body">
+          <Header />
           <Result output="output test" />
         </div>
       </>
