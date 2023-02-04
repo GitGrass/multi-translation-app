@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 // import { Route, HashRouter, Navigate, Routes } from "react-router-dom";
-import './App.css';
-import Result from './components/Result';
-import Header from './components/Header';
+import "./App.css";
+import Header from "./components/Header";
+import Input from "./components/Input"
+import Result from "./components/Result";
 import DeeplTransrationContextProvider from './context/DeeplTransrationContext';
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
       <DeeplTransrationContextProvider>
         <div className="App-body">
           <Header />
+          <Input />
           <Result searchText="output test" targetLanguage="JA" />
         </div>
       </DeeplTransrationContextProvider>
