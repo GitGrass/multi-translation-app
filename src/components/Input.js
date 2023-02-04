@@ -23,9 +23,13 @@ const Input = () => {
     setTergetLanguage(internalTargetLanguage);
   };
   return (
-    <div>
+    <div className="App-sub-title">
       <h2>Original text</h2>
+      <p className="App-text">
+        &#9656; Please select the language you wish to translate
+      </p>
       <Form
+        className="App-input-form"
         onSubmit={(e) =>
           handleSubmit(e, internalSearchText, internalTargetLanguage)
         }
@@ -37,6 +41,9 @@ const Input = () => {
             selection
             fluid
             value={internalTargetLanguage}
+            onChange={(e) => {
+              setInternalTargetLanguage(e.target.value);
+            }}
           />
           <Form.TextArea
             type="text"

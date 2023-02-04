@@ -13,9 +13,15 @@ class App extends Component {
         <InputContextProvider>
           <Header />
           <Input />
-          <Result function={TranslateByDeepl} />
-          <Result function={TranslateByDeepl} />
-          <Result function={TranslateByDeepl} />
+          <div className="App-sub-title">
+            <h2>Translation Result</h2>
+            <p className="App-output-text-first">&#9656; DeepL</p>
+            <Result function={TranslateByDeepl} />
+            <p className="App-output-text">&#9656; hoge1</p>
+            <Result function={TranslateByDeepl} />
+            <p className="App-output-text">&#9656; hoge2</p>
+            <Result function={TranslateByDeepl} />
+          </div>
         </InputContextProvider>
       </div>
     );

@@ -12,7 +12,6 @@ const Result = (props) => {
 
   return (
     <div>
-      <h2>Translation Result</h2>
       <Form>
         <Form.Field
           control={TextArea}
