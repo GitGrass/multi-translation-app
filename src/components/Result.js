@@ -1,18 +1,13 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { InputContext } from '../context/InputContext';
-import { DeeplTransrationContext } from '../context/DeeplTransrationContext';
 import { Form, TextArea } from 'semantic-ui-react';
-// import Container from "./Container";
 
 const Result = (props) => {
-  const {searchText, targetLanguage} = useContext(
-    InputContext
-);
-  const { outputText, loading, translate } = useContext(
-    DeeplTransrationContext
-  );
+  const { searchText, targetLanguage } = useContext(InputContext);
+  const [outputText, setOutputText] = useState('');
+
   useEffect(() => {
-    translate(searchText, targetLanguage);
+    props.function(searchText, targetLanguage, setOutputText);
   }, [searchText]);
 
   return (
