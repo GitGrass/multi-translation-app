@@ -3,7 +3,7 @@ import { InputContext } from '../context/InputContext';
 import { Form, Button, Segment, Dropdown } from 'semantic-ui-react';
 
 const Input = () => {
-  const { searchText, setSearchText, targetLanguage, setTergetLanguage } =
+  const { searchText, targetLanguage, setSearchText, setTargetLanguage } =
     useContext(InputContext);
 
   const [internalSearchText, setInternalSearchText] = useState('');
@@ -20,7 +20,7 @@ const Input = () => {
     e.preventDefault();
     e.currentTarget.reset();
     setSearchText(internalSearchText);
-    setTergetLanguage(internalTargetLanguage);
+    setTargetLanguage(internalTargetLanguage);
   };
   return (
     <div className="App-sub-title">
