@@ -1,9 +1,14 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
+import { InputContext } from '../context/InputContext';
 import { Form, Button, Segment, Dropdown } from "semantic-ui-react";
 
 const Input = () =>{
-    const [searchText, setSearchText] = useState('')
-    const [targetLanguage, setTergetLanguage] = useState('EN')
+    const {searchText, setSearchText, targetLanguage, setTergetLanguage} = useContext(
+        InputContext
+    );
+
+    const [internalSearchText, setInternalSearchText] = useState('')
+    const [internalTargetLanguage, setInternalTargetLanguage] = useState('')
 
     const languageOptions = [
         {key: 'EN', value: 'EN', text: 'English'},
@@ -12,36 +17,36 @@ const Input = () =>{
 
     //console.log(languageOptions[0].value)
 
-    const handleSubmit = (e, searchText, targetLanguage) =>{
+    const handleSubmit = (e, internalSearchText, internalTargetLanguage) =>{
         e.preventDefault();
         e.currentTarget.reset();
-        console.log(searchText)
-        console.log(targetLanguage)
+        setSearchText(internalSearchText)
+        setTergetLanguage(internalTargetLanguage)
     }
     return (
         <div>
             <h2>Original text</h2>
-            <Form onSubmit={(e) => handleSubmit(e, searchText, targetLanguage)}>
+            <Form onSubmit={(e) => handleSubmit(e, internalSearchText, internalTargetLanguage)}>
                 <Segment stacked>
                     <Dropdown 
                         //palceholder='select language' 
                         options={languageOptions} 
                         selection
                         fluid
-                        value={targetLanguage} 
-                        onChange={((e, data)=>{console.log(data.value); setTergetLanguage(data.value);})}
+                        value={internalTargetLanguage} 
+                        onChange={((e, data)=>{console.log(data.value); setInternalTargetLanguage(data.value);})}
                     />
                     <Form.TextArea
                         type='text'
-                        value={searchText}
-                        onChange={(e)=>{setSearchText(e.target.value)}}
+                        value={internalSearchText}
+                        onChange={(e)=>{setInternalSearchText(e.target.value)}}
                     />
                     <Button  
                         color="teal"
                         fluidsize='large'       
                         type="submit"
-                        className={`search-button ${searchText.trim() ? "active" : null}`}
-                        disabled={!searchText.trim()}
+                        className={`search-button ${internalSearchText.trim() ? "active" : null}`}
+                        disabled={!internalSearchText.trim()}
                     >
                         Translate
                     </Button>

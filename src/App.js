@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 // import { Route, HashRouter, Navigate, Routes } from "react-router-dom";
-import "./App.css";
-import Header from "./components/Header";
-import Input from "./components/Input"
-import Result from "./components/Result";
+import './App.css';
+import Header from './components/Header';
+import Input from './components/Input';
+import Result from './components/Result';
 import DeeplTransrationContextProvider from './context/DeeplTransrationContext';
-
+import InputContextProvider from './context/InputContext';
 class App extends Component {
   render() {
     return (
       // 一旦テキストベタ打ちで表示できるようにした
-      <DeeplTransrationContextProvider>
-        <div className="App-body">
-          <Header />
-          <Input />
-          <Result searchText="output test" targetLanguage="JA" />
-        </div>
-      </DeeplTransrationContextProvider>
+      <InputContextProvider>
+        <DeeplTransrationContextProvider>
+          <div className="App-body">
+            <Header />
+            <Input />
+            <Result />
+          </div>
+        </DeeplTransrationContextProvider>
+      </InputContextProvider>
 
       // 以下のような実装イメージ
       // <HashRouter basename="/translator">
