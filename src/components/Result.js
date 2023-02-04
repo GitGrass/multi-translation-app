@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { InputContext } from '../context/InputContext';
 import { Form, TextArea } from 'semantic-ui-react';
+import ShareButton from './ShareButton';
 
 const Result = (props) => {
   const { searchText, targetLanguage } = useContext(InputContext);
@@ -8,7 +9,7 @@ const Result = (props) => {
 
   useEffect(() => {
     props.function(searchText, targetLanguage, setOutputText);
-  }, [searchText]);
+  }, [props, searchText, targetLanguage]);
 
   return (
     <div>
@@ -19,6 +20,7 @@ const Result = (props) => {
           value={outputText}
         />
       </Form>
+      <ShareButton />
     </div>
   );
 };
