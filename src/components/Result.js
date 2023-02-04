@@ -6,11 +6,13 @@ const Result = ({ output }) => {
   return (
     <>
       <h2>Translation Result</h2>
-      <Form.Field
-        control={TextArea}
-        placeholder="Your Result Translation.."
-        value={output}
-      />
+      <Form>
+        <Form.Field
+          control={TextArea}
+          placeholder="Your Result Translation.."
+          value={output}
+        />
+      </Form>
     </>
   );
 };
