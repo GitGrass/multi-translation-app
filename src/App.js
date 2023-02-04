@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 // import { Route, HashRouter, Navigate, Routes } from "react-router-dom";
 import "./App.css";
-import Result from "./components/Result";
 import Header from "./components/Header";
+import Input from "./components/Input"
+import Result from "./components/Result";
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
       <>
         <div className="App-body">
           <Header />
+          <Input />
           <Result output="output test" />
         </div>
       </>
