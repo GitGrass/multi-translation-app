@@ -24,7 +24,7 @@ const Result = (props) => {
         <Form.Field
           control={TextArea}
           placeholder="Your Result Translation.."
-          value={output}
+          value={outputText}
         />
       </Form>
     </div>
