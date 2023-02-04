@@ -1,32 +1,33 @@
 import React, { Component } from 'react';
 // import { Route, HashRouter, Navigate, Routes } from "react-router-dom";
-import "./App.css";
-import Header from "./components/Header";
-import Input from "./components/Input"
-import Result from "./components/Result";
-import DeeplTransrationContextProvider from './context/DeeplTransrationContext';
+import './App.css';
+import Result from './components/Result';
+import Header from './components/Header';
+import TranslateByDeepl from './features/api/Deepl';
+import Input from './components/Input'
 
 class App extends Component {
   render() {
     return (
-      // 一旦テキストベタ打ちで表示できるようにした
-      <DeeplTransrationContextProvider>
-        <div className="App-body">
-          <Header />
-          <Input />
-          <Result searchText="output test" targetLanguage="JA" />
-        </div>
-      </DeeplTransrationContextProvider>
-
-      // 以下のような実装イメージ
-      // <HashRouter basename="/translator">
-      //   <div className="App-body">
-      //     <Routes>
-      //       <Route exact path="/" render={() => <Navigate to="${firstViewPage}" />} />
-      //       <Route path="/${outputLang}/${inputText}" render={() => <Result output={outputText} />} />
-      //     </Routes>
-      //   </div>
-      // </HashRouter>
+      <div className="App-body">
+        <Header />
+        <Input />
+        <Result
+          searchText="message"
+          targetLanguage="JA"
+          function={TranslateByDeepl}
+        />
+        <Result
+          searchText="hello"
+          targetLanguage="JA"
+          function={TranslateByDeepl}
+        />
+        <Result
+          searchText="test"
+          targetLanguage="JA"
+          function={TranslateByDeepl}
+        />
+      </div>
     );
   }
 }
