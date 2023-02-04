@@ -1,54 +1,65 @@
-import React, {useState} from "react";
-import { Form, Button, Segment, Dropdown } from "semantic-ui-react";
+import React, { useContext, useState } from 'react';
+import { InputContext } from '../context/InputContext';
+import { Form, Button, Segment, Dropdown } from 'semantic-ui-react';
 
-const Input = () =>{
-    const [searchText, setSearchText] = useState('')
-    const [targetLanguage, setTergetLanguage] = useState('EN')
+const Input = () => {
+  const { searchText, setSearchText, targetLanguage, setTergetLanguage } =
+    useContext(InputContext);
 
-    const languageOptions = [
-        {key: 'EN', value: 'EN', text: 'English'},
-        {key: 'JA', value: 'JA', text: 'Japanese'},
-    ]
+  const [internalSearchText, setInternalSearchText] = useState('');
+  const [internalTargetLanguage, setInternalTargetLanguage] = useState('EN');
 
-    //console.log(languageOptions[0].value)
+  const languageOptions = [
+    { key: 'EN', value: 'EN', text: 'English' },
+    { key: 'JA', value: 'JA', text: 'Japanese' },
+  ];
 
-    const handleSubmit = (e, searchText, targetLanguage) =>{
-        e.preventDefault();
-        e.currentTarget.reset();
-        console.log(searchText)
-        console.log(targetLanguage)
-    }
-    return (
-        <div>
-            <h2>Original text</h2>
-            <Form onSubmit={(e) => handleSubmit(e, searchText, targetLanguage)}>
-                <Segment stacked>
-                    <Dropdown 
-                        //palceholder='select language' 
-                        options={languageOptions} 
-                        selection
-                        fluid
-                        value={targetLanguage} 
-                        onChange={((e, data)=>{console.log(data.value); setTergetLanguage(data.value);})}
-                    />
-                    <Form.TextArea
-                        type='text'
-                        value={searchText}
-                        onChange={(e)=>{setSearchText(e.target.value)}}
-                    />
-                    <Button  
-                        color="teal"
-                        fluidsize='large'       
-                        type="submit"
-                        className={`search-button ${searchText.trim() ? "active" : null}`}
-                        disabled={!searchText.trim()}
-                    >
-                        Translate
-                    </Button>
-                </Segment>
-            </Form>
-        </div>
-    )
-}
+  //console.log(languageOptions[0].value)
 
-export default Input
+  const handleSubmit = (e, internalSearchText, internalTargetLanguage) => {
+    e.preventDefault();
+    e.currentTarget.reset();
+    setSearchText(internalSearchText);
+    setTergetLanguage(internalTargetLanguage);
+  };
+  return (
+    <div>
+      <h2>Original text</h2>
+      <Form
+        onSubmit={(e) =>
+          handleSubmit(e, internalSearchText, internalTargetLanguage)
+        }
+      >
+        <Segment stacked>
+          <Dropdown
+            //palceholder='select language'
+            options={languageOptions}
+            selection
+            fluid
+            value={internalTargetLanguage}
+          />
+          <Form.TextArea
+            type="text"
+            value={internalSearchText}
+            onChange={(e) => {
+              setInternalSearchText(e.target.value);
+            }}
+          />
+          <Button
+            color="teal"
+            fluidsize="large"
+            type="submit"
+            className={`search-button ${
+              internalSearchText.trim() ? 'active' : null
+            }`}
+            disabled={!internalSearchText.trim()}
+          >
+            Translate
+          </Button>
+        </Segment>
+      </Form>
+    </div>
+  );
+};
+
+export default Input;
