@@ -4,11 +4,11 @@ export const InputContext = createContext();
 
 const InputContextProvider = (props) => {
   const [searchText, setSearchText] = useState('');
-  const [targetLanguage, setTergetLanguage] = useState('EN');
+  const [targetLanguage, setTargetLanguage] = useState('EN');
 
   return (
     <InputContext.Provider
-      value={{ searchText, targetLanguage, setSearchText, setTergetLanguage }}
+      value={{ searchText, targetLanguage, setSearchText, setTargetLanguage }}
     >
       {props.children}
     </InputContext.Provider>
