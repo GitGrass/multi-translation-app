@@ -41,8 +41,8 @@ const Input = () => {
             selection
             fluid
             value={internalTargetLanguage}
-            onChange={(e) => {
-              setInternalTargetLanguage(e.target.value);
+            onChange={(e, data) => {
+              setInternalTargetLanguage(data.value);
             }}
           />
           <Form.TextArea
