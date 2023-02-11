@@ -3,6 +3,7 @@ import './App.css';
 import Result from './components/Result';
 import Header from './components/Header';
 import TranslateByDeepl from './features/api/Deepl';
+import TranslateByGoogle from './features/api/GoogleTranslate';
 import Input from './components/Input';
 import InputContextProvider from './context/InputContext';
 
@@ -17,8 +18,8 @@ class App extends Component {
             <h2>Translation Result</h2>
             <p className="App-output-text-first">&#9656; DeepL</p>
             <Result function={TranslateByDeepl} />
-            <p className="App-output-text">&#9656; hoge1</p>
-            <Result function={TranslateByDeepl} />
+            <p className="App-output-text">&#9656; Google</p>
+            <Result function={TranslateByGoogle} />
             <p className="App-output-text">&#9656; hoge2</p>
             <Result function={TranslateByDeepl} />
           </div>
