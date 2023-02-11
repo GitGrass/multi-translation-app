@@ -23,8 +23,7 @@ const DeeplTransrationContextProvider = (props) => {
       .then((r) => r.json())
       .then((response) => {
         const translatedText = response.translations[0].text;
-        // const translatedText = response.translations.map((translation) => translation.text); //.join(' ');
-        console.log(translatedText);
+
         setText(translatedText);
         setLoading(false);
       })

@@ -14,8 +14,6 @@ const Input = () => {
     { key: 'JA', value: 'JA', text: 'Japanese' },
   ];
 
-  //console.log(languageOptions[0].value)
-
   const handleSubmit = (e, internalSearchText, internalTargetLanguage) => {
     e.preventDefault();
     e.currentTarget.reset();
