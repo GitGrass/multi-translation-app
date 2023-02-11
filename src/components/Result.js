@@ -9,7 +9,6 @@ const Result = (props) => {
 
   useEffect(() => {
     props.function(searchText, targetLanguage, setOutputText);
-    console.log(outputText);
   }, [props, searchText, targetLanguage]);
 
   return (
