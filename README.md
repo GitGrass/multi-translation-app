@@ -55,6 +55,10 @@ $ node -v
 $ npm -v
 ```
 
+## License
+
+[MIT](https://github.com/GitGrass/multi-translation-app/blob/develop/LICENSE)
+
 ## Author
 
 - [mytkymt](https://github.com/mytkymt)
