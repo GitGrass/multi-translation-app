@@ -29,6 +29,9 @@ const TranslateByGoogle = (searchText, targetLanguage, setOutputText) => {
     })
     .catch(function (error) {
       console.error(error);
+      setOutputText(
+        '- This translation API cannot be used because it has exceeded the monthly translation usage limit. -'
+      );
     });
 };
 

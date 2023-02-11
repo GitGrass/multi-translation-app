@@ -1,4 +1,18 @@
-# Getting Started with Create React App
+# Multi Translation App
+
+## Description
+
+This application can compare and display the results of multiple translation APIs.
+
+## Demo
+
+It can only work in local environment.
+
+http://localhost:3000/
+
+<img width="839" alt="Page" src="https://user-images.githubusercontent.com/84697485/218259009-2d030f52-0aec-4bb7-8dce-a5b8bbd3f35a.png">
+
+## Install
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +82,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Author
+
+- [mytkymt](https://github.com/mytkymt)
+- [ponmas](https://github.com/ponmas)
+- [awat17](https://github.com/awat17)
