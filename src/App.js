@@ -6,6 +6,7 @@ import TranslateByDeepl from './features/api/Deepl';
 import TranslateByGoogle from './features/api/GoogleTranslate';
 import Input from './components/Input';
 import InputContextProvider from './context/InputContext';
+import TranslateByDeepTranslate from './features/api/DeepTranslate';
 
 class App extends Component {
   render() {
@@ -20,8 +21,8 @@ class App extends Component {
             <Result function={TranslateByDeepl} />
             <p className="App-output-text">&#9656; Google</p>
             <Result function={TranslateByGoogle} />
-            <p className="App-output-text">&#9656; hoge2</p>
-            <Result function={TranslateByDeepl} />
+            <p className="App-output-text">&#9656; DeepL Translate</p>
+            <Result function={TranslateByDeepTranslate} />
           </div>
         </InputContextProvider>
       </div>
