@@ -6,6 +6,8 @@ import TranslateByDeepl from './features/api/Deepl';
 import TranslateByGoogle from './features/api/GoogleTranslate';
 import Input from './components/Input';
 import InputContextProvider from './context/InputContext';
+import TranslateByDeepTranslate from './features/api/DeepTranslate';
+import ErrorBoundary from './components/ErrorBoundary';
 
 class App extends Component {
   render() {
@@ -17,11 +19,17 @@ class App extends Component {
           <div className="App-sub-title">
             <h2>Translation Result</h2>
             <p className="App-output-text-first">&#9656; DeepL</p>
-            <Result function={TranslateByDeepl} />
+            <ErrorBoundary>
+              <Result function={TranslateByDeepl} />
+            </ErrorBoundary>
             <p className="App-output-text">&#9656; Google</p>
-            <Result function={TranslateByGoogle} />
-            <p className="App-output-text">&#9656; hoge2</p>
-            <Result function={TranslateByDeepl} />
+            <ErrorBoundary>
+              <Result function={TranslateByGoogle} />
+            </ErrorBoundary>
+            <p className="App-output-text">&#9656; Deep Translate</p>
+            <ErrorBoundary>
+              <Result function={TranslateByDeepTranslate} />
+            </ErrorBoundary>
           </div>
         </InputContextProvider>
       </div>

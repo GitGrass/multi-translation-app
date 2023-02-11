@@ -1,7 +1,8 @@
+import { deepL_apiKey } from './config';
+
 const TranslateByDeepl = (searchText, targetLanguage, setOutputText) => {
   const params = new URLSearchParams({
-    auth_key: '04d72a78-ed6f-5c12-e002-5d4e67a4a8b7:fx',
-    //source_lang: languages.source,
+    auth_key: deepL_apiKey,
     target_lang: targetLanguage,
     text: searchText,
   });
@@ -22,6 +23,9 @@ const TranslateByDeepl = (searchText, targetLanguage, setOutputText) => {
     })
     .catch((error) => {
       console.error(error);
+      setOutputText(
+        'Sorry.\nThis translation API cannot be used because it has exceeded the monthly translation usage limit.'
+      );
       return 'Could not translate';
     });
 };
