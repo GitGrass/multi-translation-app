@@ -21,7 +21,7 @@ class App extends Component {
             <Result function={TranslateByDeepl} />
             <p className="App-output-text">&#9656; Google</p>
             <Result function={TranslateByGoogle} />
-            <p className="App-output-text">&#9656; DeepL Translate</p>
+            <p className="App-output-text">&#9656; Deep Translate</p>
             <Result function={TranslateByDeepTranslate} />
           </div>
         </InputContextProvider>
