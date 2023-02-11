@@ -3,6 +3,8 @@ import axios from 'axios';
 const TranslateByGoogle = (searchText, targetLanguage, setOutputText) => {
   //const axios = require('axios');
 
+  if (searchText === '') return;
+
   targetLanguage = targetLanguage.toLowerCase();
   const encodedParams = new URLSearchParams();
   encodedParams.append('q', searchText);

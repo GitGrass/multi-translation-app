@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Result from './components/Result';
 import Header from './components/Header';
+import TranslateByDeep from './features/api/DeepTranslate';
 import TranslateByDeepl from './features/api/Deepl';
 import TranslateByGoogle from './features/api/GoogleTranslate';
 import Input from './components/Input';
@@ -21,7 +22,7 @@ class App extends Component {
             <p className="App-output-text">&#9656; Google</p>
             <Result function={TranslateByGoogle} />
             <p className="App-output-text">&#9656; hoge2</p>
-            <Result function={TranslateByDeepl} />
+            <Result function={TranslateByDeep} />
           </div>
         </InputContextProvider>
       </div>
