@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Multi Translation App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This application can compare and display the results of multiple translation APIs.
+The currently supported translation APIs are shown below.
 
-In the project directory, you can run:
+- [DeepL](https://www.deepl.com/docs-api)
+- [Google Translate](https://rapidapi.com/googlecloud/api/google-translate1)
+- [Deep Translate](https://rapidapi.com/gatzuma/api/deep-translate1)
 
-### `npm start`
+## Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+It can only work in local environment.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+http://localhost:3000/
 
-### `npm test`
+<img width="839" alt="Page" src="https://user-images.githubusercontent.com/84697485/218259009-2d030f52-0aec-4bb7-8dce-a5b8bbd3f35a.png">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+1. Type the following command to clone the repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+git clone git@github.com:GitGrass/multi-translation-app.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Move to the directory where you cloned the repository as follows
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+cd workspace/multi-translation-app
+```
 
-### `npm run eject`
+3. Enter the following command to run the app in the development mode
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+4 npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Open http://localhost:3000 to view it in your browser
+5. Please select the language you want to translate
+6. Enter the text you want to translate
+7. Press the Translate button
+8. Each translation result is displayed
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+( This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) )
 
-## Learn More
+1. Install Node.js from https://nodejs.org/en/
+2. Check the version of node and npm with the command below
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+$ node -v
+$ npm -v
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
+[MIT](https://github.com/GitGrass/multi-translation-app/blob/develop/LICENSE)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Author
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [mytkymt](https://github.com/mytkymt)
+- [ponmas](https://github.com/ponmas)
+- [awat17](https://github.com/awat17)
